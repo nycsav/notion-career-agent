@@ -1,0 +1,162 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Career Agent Architecture</title>
+  <desc>Pipeline: Discover → Score → Decide → Tailor → Track → Notify</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .title { font-size: 18px; font-weight: 700; fill: #1a1a2e; }
+    .subtitle { font-size: 11px; fill: #666; }
+    .box { rx: 10; ry: 10; stroke-width: 1.5; }
+    .box-label { font-size: 12px; font-weight: 600; fill: #fff; }
+    .box-sub { font-size: 9px; fill: rgba(255,255,255,0.85); }
+    .connector { stroke: #94a3b8; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    .step-num { font-size: 10px; font-weight: 700; fill: #fff; }
+    .layer-label { font-size: 10px; font-weight: 600; fill: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+    .tech-tag { font-size: 9px; fill: #64748b; }
+    .section-bg { fill: #f8fafc; rx: 12; ry: 12; stroke: #e2e8f0; stroke-width: 1; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <linearGradient id="g-discover" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="g-score" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="g-decide" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+    <linearGradient id="g-tailor" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+    <linearGradient id="g-track" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0891b2"/></linearGradient>
+    <linearGradient id="g-notify" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#db2777"/></linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" class="title">Career Agent — Pipeline Architecture</text>
+  <text x="450" y="48" text-anchor="middle" class="subtitle">Sequential orchestration: each step depends on previous output</text>
+
+  <!-- Pipeline boxes -->
+  <!-- Step 1: Discover -->
+  <rect x="20" y="75" width="130" height="80" class="box" fill="url(#g-discover)" stroke="#2563eb"/>
+  <circle cx="40" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="40" y="96" text-anchor="middle" class="step-num">1</text>
+  <text x="85" y="96" text-anchor="middle" class="box-label">DISCOVER</text>
+  <text x="85" y="115" text-anchor="middle" class="box-sub">scanJobs tool</text>
+  <text x="85" y="128" text-anchor="middle" class="box-sub">Dice + Indeed MCPs</text>
+  <text x="85" y="141" text-anchor="middle" class="box-sub">keyword + location</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M 150 115 L 170 115" class="connector"/>
+
+  <!-- Step 2: Score -->
+  <rect x="170" y="75" width="130" height="80" class="box" fill="url(#g-score)" stroke="#7c3aed"/>
+  <circle cx="190" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="190" y="96" text-anchor="middle" class="step-num">2</text>
+  <text x="235" y="96" text-anchor="middle" class="box-label">SCORE</text>
+  <text x="235" y="115" text-anchor="middle" class="box-sub">Claude Haiku 4.5</text>
+  <text x="235" y="128" text-anchor="middle" class="box-sub">0-100 fit scoring</text>
+  <text x="235" y="141" text-anchor="middle" class="box-sub">fast + cheap</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M 300 115 L 320 115" class="connector"/>
+
+  <!-- Step 3: Decide -->
+  <rect x="320" y="75" width="130" height="80" class="box" fill="url(#g-decide)" stroke="#d97706"/>
+  <circle cx="340" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="340" y="96" text-anchor="middle" class="step-num">3</text>
+  <text x="385" y="96" text-anchor="middle" class="box-label">DECIDE</text>
+  <text x="385" y="115" text-anchor="middle" class="box-sub">Automation tier</text>
+  <text x="385" y="128" text-anchor="middle" class="box-sub">threshold check</text>
+  <text x="385" y="141" text-anchor="middle" class="box-sub">priority routing</text>
+
+  <!-- Arrow 3→4 -->
+  <path d="M 450 115 L 470 115" class="connector"/>
+
+  <!-- Step 4: Tailor -->
+  <rect x="470" y="75" width="130" height="80" class="box" fill="url(#g-tailor)" stroke="#059669"/>
+  <circle cx="490" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="490" y="96" text-anchor="middle" class="step-num">4</text>
+  <text x="535" y="96" text-anchor="middle" class="box-label">TAILOR</text>
+  <text x="535" y="115" text-anchor="middle" class="box-sub">Claude Sonnet 4.6</text>
+  <text x="535" y="128" text-anchor="middle" class="box-sub">resume + cover letter</text>
+  <text x="535" y="141" text-anchor="middle" class="box-sub">ATS-optimized</text>
+
+  <!-- Arrow 4→5 -->
+  <path d="M 600 115 L 620 115" class="connector"/>
+
+  <!-- Step 5: Track -->
+  <rect x="620" y="75" width="130" height="80" class="box" fill="url(#g-track)" stroke="#0891b2"/>
+  <circle cx="640" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="640" y="96" text-anchor="middle" class="step-num">5</text>
+  <text x="685" y="96" text-anchor="middle" class="box-label">TRACK</text>
+  <text x="685" y="115" text-anchor="middle" class="box-sub">Notion Database</text>
+  <text x="685" y="128" text-anchor="middle" class="box-sub">status pipeline</text>
+  <text x="685" y="141" text-anchor="middle" class="box-sub">linked materials</text>
+
+  <!-- Arrow 5→6 -->
+  <path d="M 750 115 L 770 115" class="connector"/>
+
+  <!-- Step 6: Notify -->
+  <rect x="770" y="75" width="110" height="80" class="box" fill="url(#g-notify)" stroke="#db2777"/>
+  <circle cx="790" cy="92" r="9" fill="rgba(0,0,0,0.2)"/>
+  <text x="790" y="96" text-anchor="middle" class="step-num">6</text>
+  <text x="825" y="96" text-anchor="middle" class="box-label">NOTIFY</text>
+  <text x="825" y="115" text-anchor="middle" class="box-sub">Slack MCP</text>
+  <text x="825" y="128" text-anchor="middle" class="box-sub">human approval</text>
+  <text x="825" y="141" text-anchor="middle" class="box-sub">action required</text>
+
+  <!-- Technology layer -->
+  <rect x="20" y="190" width="860" height="100" class="section-bg"/>
+  <text x="40" y="210" class="layer-label">Technology Stack</text>
+
+  <!-- Tech boxes -->
+  <rect x="40" y="220" width="150" height="55" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="115" y="242" text-anchor="middle" class="box-label" style="font-size:11px">Notion Workers</text>
+  <text x="115" y="258" text-anchor="middle" class="box-sub" style="fill:#94a3b8">Sandboxed TypeScript</text>
+
+  <rect x="210" y="220" width="150" height="55" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="285" y="242" text-anchor="middle" class="box-label" style="font-size:11px">Claude API</text>
+  <text x="285" y="258" text-anchor="middle" class="box-sub" style="fill:#94a3b8">Haiku + Sonnet dual-model</text>
+
+  <rect x="380" y="220" width="150" height="55" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="455" y="242" text-anchor="middle" class="box-label" style="font-size:11px">Notion Database</text>
+  <text x="455" y="258" text-anchor="middle" class="box-sub" style="fill:#94a3b8">Career Command Center</text>
+
+  <rect x="550" y="220" width="150" height="55" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="625" y="242" text-anchor="middle" class="box-label" style="font-size:11px">MCP Connectors</text>
+  <text x="625" y="258" text-anchor="middle" class="box-sub" style="fill:#94a3b8">Dice · Indeed · Slack</text>
+
+  <rect x="720" y="220" width="150" height="55" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="795" y="242" text-anchor="middle" class="box-label" style="font-size:11px">Custom Agent</text>
+  <text x="795" y="258" text-anchor="middle" class="box-sub" style="fill:#94a3b8">5 Worker tools</text>
+
+  <!-- Automation Tiers -->
+  <rect x="20" y="310" width="860" height="90" class="section-bg"/>
+  <text x="40" y="330" class="layer-label">Automation Tiers</text>
+
+  <rect x="40" y="342" width="260" height="44" rx="8" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="170" y="361" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#1e40af">Copilot (50%)</text>
+  <text x="170" y="376" text-anchor="middle" style="font-size:9px;fill:#3b82f6">Scores jobs → you review everything</text>
+
+  <rect x="320" y="342" width="260" height="44" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="450" y="361" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#92400e">Autopilot (75%)</text>
+  <text x="450" y="376" text-anchor="middle" style="font-size:9px;fill:#d97706">Auto-generates materials → you approve</text>
+
+  <rect x="600" y="342" width="260" height="44" rx="8" fill="#d1fae5" stroke="#6ee7b7"/>
+  <text x="730" y="361" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#065f46">Autonomous (100%)</text>
+  <text x="730" y="376" text-anchor="middle" style="font-size:9px;fill:#059669">Full pipeline above threshold score</text>
+
+  <!-- Worker Tools -->
+  <rect x="20" y="420" width="860" height="85" class="section-bg"/>
+  <text x="40" y="440" class="layer-label">5 Worker Tools</text>
+
+  <rect x="40" y="452" width="155" height="38" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="117" y="475" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#334155">scanJobs</text>
+
+  <rect x="210" y="452" width="155" height="38" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="287" y="475" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#334155">tailorResume</text>
+
+  <rect x="380" y="452" width="155" height="38" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="457" y="475" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#334155">getCareerInsight</text>
+
+  <rect x="550" y="452" width="155" height="38" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="627" y="475" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#334155">configureAgent</text>
+
+  <rect x="720" y="452" width="155" height="38" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="797" y="475" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#334155">getAgentStatus</text>
+</svg>
