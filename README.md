@@ -78,7 +78,7 @@ Gmail/LinkedIn notification → jobSync (parse + score) → Job Tracker DB → t
 
 ## Source Tier System
 
-Borrowed from [signal2noise](https://signals.ensolabs.ai)'s editorial intelligence framework:
+A prioritization framework that weights applications by how you found the role:
 
 | Tier | Source | Conversion Rate |
 |------|--------|-----------------|

@@ -3,7 +3,7 @@
 **Event:** Notion Developer Platform Hackathon (May 16-17, 2026, Notion HQ SF)
 **Deadline:** Sunday May 17, 12:00 PM PT — submit on Cerebral Valley
 **Theme:** Workflow Relay (Theme 2)
-**Repo:** nycsav/signal2noise-notion-hackathon (push as public before submission)
+**Repo:** nycsav/notion-career-agent (push as public before submission)
 
 ---
 
@@ -71,7 +71,7 @@ Add standard MIT license file to repo root.
 ```bash
 cd ~/Projects/ensolabs-site/notion-career-agent
 git init
-git remote add origin git@github.com:nycsav/signal2noise-notion-hackathon.git
+git remote add origin https://github.com/nycsav/notion-career-agent.git
 git add -A
 git commit -m "Notion Career Agent — hackathon submission"
 git push -u origin main
