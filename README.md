@@ -34,12 +34,31 @@
 - [Why This Architecture](#why-this-architecture)
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
+- [Market Opportunity for Notion](#market-opportunity-for-notion)
 
 ---
 
 ## The Problem
 
-Job seekers submit **16 applications per week** but spend less than 30 minutes customizing each. Tailored resumes are **61% more likely** to land interviews, yet nobody customizes at scale. Existing tools are either spam cannons (LazyApply: 2.1 stars) or passive trackers that don't do the work for you.
+The job search is broken — and existing tools make it worse.
+
+| Metric | Data Point | Source |
+|--------|-----------|--------|
+| Applications to get one interview | **42 on average** | ResuTrack 2026 |
+| Generic application → interview rate | **2–3%** | Resume Genius 2026 |
+| Tailored application → interview rate | **7–9%** (2.1× higher) | TopCV 2026 |
+| Applications per job posting | **250 avg** (400+ for entry-level) | HiringThing 2026 |
+| Time spent customizing each application | **< 30 minutes** | Huntr 2026 |
+
+**The market is polarized between two broken approaches:**
+
+| Tool Type | Example | Problem |
+|-----------|---------|---------|
+| Spam cannons | LazyApply (2.4★ Trustpilot, 56% one-star) | Triggers spam filters, gets accounts banned, 34% accuracy on complex ATS |
+| Passive trackers | Teal, Huntr | Organize your pipeline but don't do the work — you still write every resume |
+| **Missing middle** | **JobRelay** | Scores, generates, tracks — with human approval before submit |
+
+> **The gap:** No tool today combines intelligent scoring + tailored generation + Notion-native tracking in a single agent workflow. JobRelay fills that gap.
 
 ## What JobRelay Does
 
@@ -101,7 +120,7 @@ Users control how much the agent does autonomously:
 
 ## Career Command Center
 
-The Notion database that tracks your entire pipeline:
+The Notion database that tracks your entire pipeline. Below is a live example showing the agent scoring roles for a senior AI/ML professional targeting Anthropic, Stripe, McKinsey, OpenAI, and Scale AI — with fit scores ranging from 94 (DREAM match) to 42 (auto-skipped):
 
 <p align="center">
   <img src="docs/command-center.svg" alt="Career Command Center" width="900"/>
@@ -201,6 +220,24 @@ notion-career-agent/
 - **Human-in-the-loop** — approval step before any application goes out
 - **Production-grade scoring** — source tiers, match explanations, gap analysis, ATS keyword extraction
 - **Configurable cadence** — on-demand, daily, weekly, or realtime scanning
+
+## Market Opportunity for Notion
+
+| Metric | Value |
+|--------|-------|
+| Notion total users | **100M+** (2026) |
+| Primary demographic | 17–35 year olds — peak career transition years |
+| Active job seekers in US alone (BLS) | **6.5M** monthly |
+| Estimated Notion users actively job searching | **5–8M** (5–8% of base) |
+| Career management TAM | **$15B** globally (LinkedIn, Indeed, Teal, Huntr) |
+
+**Why this matters for Notion:**
+
+- **Retention hook** — Job seekers check their pipeline *daily*. A Career Command Center makes Notion the first tab opened every morning, driving DAU during a user's highest-engagement life phase.
+- **Workspace expansion** — Each job application generates 3–5 new Notion pages (resume, cover letter, company research, interview prep, offer comparison). A 20-application pipeline creates 60–100 pages of content.
+- **Workers monetization** — JobRelay demonstrates the Workers compute model: AI-heavy workloads (scoring + generation) that justify per-run credit pricing. A power user running daily scans = steady compute revenue.
+- **Platform stickiness** — Once your career history, tailored materials, and interview notes live in Notion, switching costs are high. This is the "second brain" use case applied to the highest-stakes personal workflow.
+- **Network effects** — Users share Career Command Center templates, creating organic growth in Notion's template marketplace.
 
 ---
 
