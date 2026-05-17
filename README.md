@@ -35,13 +35,14 @@
 - [Why This Architecture](#why-this-architecture)
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
-- [Market Opportunity for Notion](#market-opportunity-for-notion)
+- [Why Notion — The Business Case](#why-notion--the-business-case)
+- [Scale & Impact](#scale--impact--why-this-matters-beyond-the-demo)
 
 ---
 
 ## The Problem
 
-The job search is broken — and existing tools make it worse.
+**238 million people** use job boards every month. The vast majority are already Notion users — managing notes, projects, and personal workflows. But when they start looking for work, they leave Notion entirely for fragmented, frustrating tools that don't talk to each other.
 
 | Metric | Data Point | Source |
 |--------|-----------|--------|
@@ -59,7 +60,7 @@ The job search is broken — and existing tools make it worse.
 | Passive trackers | Teal, Huntr | Organize your pipeline but don't do the work — you still write every resume |
 | **Missing middle** | **JobRelay** | Scores, generates, tracks — with human approval before submit |
 
-> **The gap:** No tool today combines intelligent scoring + tailored generation + Notion-native tracking in a single agent workflow. JobRelay fills that gap.
+> **The insight:** Notion's 100M users already have their professional identity in Notion — work samples, project docs, career notes. The missing piece isn't *another* app; it's an agent that puts that context to work. JobRelay turns Notion from a place where users *organize their life* into where they *advance their career* — without ever leaving the workspace.
 
 ## What JobRelay Does
 
@@ -120,12 +121,16 @@ Say **"scan for jobs"** and watch results flow into your Career Command Center. 
   <img src="docs/agent-chat.svg" alt="JobRelay Agent Chat" width="520"/>
 </p>
 
-### Dual-Model AI Strategy
+### Dual-Model AI Strategy — Sequential Agent Orchestration
+
+JobRelay uses a **sequential agent pipeline** where Claude models are orchestrated in a relay pattern — the output of one model becomes the input of the next, with routing logic in between. This mirrors how a real recruitment team operates: a junior analyst screens candidates fast, then passes top matches to a senior writer for crafting personalized outreach.
 
 | Model | Role | Why |
 |-------|------|-----|
-| **Claude Haiku 4.5** | Scoring (Step 2) | Fast, cheap — scores dozens of jobs in seconds |
-| **Claude Sonnet 4.5** | Generation (Step 4) | Quality resume + cover letter writing |
+| **Claude Haiku 4.5** | Scoring (Step 2) | Fast, cheap — scores dozens of jobs in seconds. Structured JSON output with match score, fit reason, gap analysis, and ATS keywords. |
+| **Claude Sonnet 4.5** | Generation (Step 4) | Quality resume + cover letter writing. Only invoked for roles above the user's score threshold — smart cost control. |
+
+This dual-model relay is the core technical insight: **use the right model for the right task**, with a routing layer that prevents expensive Sonnet calls on low-quality matches. A full 20-job scan costs ~$0.03 in Haiku scoring; only the top 3–5 trigger Sonnet generation.
 
 ### Three Automation Tiers
 
@@ -184,16 +189,18 @@ A prioritization framework that weights applications by discovery channel:
 
 ## Why This Architecture
 
-Design decisions and tradeoffs that shaped JobRelay:
+Design decisions and tradeoffs that shaped JobRelay — and why this is more than a few AI prompts:
 
-| Decision | Rationale |
-|----------|-----------|
-| **Sequential pipeline** (not parallel) | Each step's output feeds the next — you can't tailor a resume without scoring first |
-| **Dual-model strategy** | Haiku is 10x cheaper for scoring bulk jobs; Sonnet produces higher-quality generation |
-| **Notion-native** | Zero external infrastructure — no databases, no servers, no Docker. Everything lives in your Notion workspace |
-| **Human-in-the-loop** | The agent never submits without approval. Trust is earned one application at a time |
-| **Source tier weighting** | A referral (50% interview rate) shouldn't be scored the same as a cold apply (2%) |
-| **Configurable autonomy** | Not everyone wants full autopilot. Copilot mode lets cautious users stay in control |
+| Decision | Rationale | Implementation Depth |
+|----------|-----------|---------------------|
+| **Sequential pipeline** (not parallel) | Each step's output feeds the next — you can't tailor a resume without scoring first | 6-step relay with structured data contracts between stages |
+| **Dual-model strategy** | Haiku is 10× cheaper for scoring bulk jobs; Sonnet produces higher-quality generation | Cost-aware routing: score threshold gates expensive Sonnet calls |
+| **Notion-native** | Zero external infrastructure — no databases, no servers, no Docker | Workers runtime + Notion Database API — the platform *is* the backend |
+| **Human-in-the-loop** | The agent never submits without approval. Trust is earned one application at a time | Three automation tiers let users dial trust up gradually |
+| **Source tier weighting** | A referral (50% interview rate) shouldn't be scored the same as a cold apply (2%) | 5-tier prioritization framework baked into scoring prompts |
+| **Structured output contracts** | Every tool returns typed JSON, not free-text — so the next stage can parse reliably | Haiku returns `{score, fitReason, gaps, atsKeywords}`; Sonnet returns `{resume, coverLetter}` |
+
+> **What makes this hard to recreate:** The challenge isn't calling Claude — it's building a reliable multi-step pipeline where structured outputs chain correctly, scoring thresholds gate expensive operations, and the entire state flows into a Notion database with the right schema. Each tool (~100 lines avg) encodes domain logic, not just a prompt wrapper.
 
 ## Quick Start
 
@@ -243,14 +250,31 @@ notion-career-agent/
 
 ## Technical Highlights
 
-- **Sequential orchestration** — not parallel; each step's output feeds the next
-- **Dual-model strategy** — Haiku for speed scoring, Sonnet for quality generation
-- **Notion-native** — zero external infrastructure; everything lives in your workspace
-- **Human-in-the-loop** — approval step before any application goes out
+- **Sequential agent orchestration** — not parallel; each step's output feeds the next in a relay chain
+- **Dual-model Claude strategy** — Haiku for speed scoring, Sonnet for quality generation, with cost-aware routing
+- **Notion-native** — zero external infrastructure; the platform is the backend, the database is the UI
+- **Human-in-the-loop** — approval step before any application goes out; three autonomy tiers
 - **Production-grade scoring** — source tiers, match explanations, gap analysis, ATS keyword extraction
-- **Configurable cadence** — on-demand, daily, weekly, or realtime scanning
+- **Structured output contracts** — typed JSON between every pipeline stage for reliable chaining
+- **~590 lines of TypeScript** — lean, readable, no framework bloat
 
-## Market Opportunity for Notion
+## Scale & Impact — Why This Matters Beyond the Demo
+
+JobRelay addresses a **universal consumer need** inside a platform with **100M existing users**. Unlike vertical SMB tools (voice agents for individual businesses, CRM bots for specific industries), career search is a horizontal problem that touches every professional — regardless of role, industry, or seniority.
+
+| Dimension | Vertical SMB Tool | JobRelay |
+|-----------|-------------------|----------|
+| Addressable users | Hundreds per business | **5–8M Notion users** actively job searching |
+| Engagement pattern | Transactional (one-time setup) | **Daily check-ins** during career transition |
+| Content generation | Minimal (scripts, responses) | **60–100 pages** per job search pipeline |
+| Platform value | External integration | **Native Notion** — drives retention, engagement, and Workers revenue |
+| Growth mechanism | Sales-driven (one customer at a time) | **Template sharing** — organic viral growth through Notion's marketplace |
+
+> Every Notion user will search for a job at some point. When that moment comes, JobRelay makes Notion the place they do it — not LinkedIn, not Teal, not a spreadsheet. That's a retention moat.
+
+## Why Notion — The Business Case
+
+The strategic question isn't "should Notion have a career tool?" It's: **why are millions of Notion power users leaving the workspace for inferior tools during the highest-stakes workflow of their professional lives?**
 
 | Metric | Value |
 |--------|-------|
@@ -260,13 +284,15 @@ notion-career-agent/
 | Estimated Notion users actively job searching | **5–8M** (5–8% of base) |
 | Career management TAM | **$15B** globally (LinkedIn, Indeed, Teal, Huntr) |
 
-**Why this matters for Notion:**
+**The loyalty case — keep users in Notion instead of losing them to fragmented tools:**
 
-- **Retention hook** — Job seekers check their pipeline *daily*. A Career Command Center makes Notion the first tab opened every morning, driving DAU during a user's highest-engagement life phase.
-- **Workspace expansion** — Each job application generates 3–5 new Notion pages (resume, cover letter, company research, interview prep, offer comparison). A 20-application pipeline creates 60–100 pages of content.
-- **Workers monetization** — JobRelay demonstrates the Workers compute model: AI-heavy workloads (scoring + generation) that justify per-run credit pricing. A power user running daily scans = steady compute revenue.
+- **Daily engagement hook** — Job seekers check their pipeline *daily*. A Career Command Center makes Notion the first tab opened every morning, driving DAU during a user's highest-engagement life phase. This is retention when it matters most — people in career transitions are the most likely to churn to a competitor's workspace.
+- **Workspace expansion** — Each job application generates 3–5 new Notion pages (resume, cover letter, company research, interview prep, offer comparison). A 20-application pipeline creates 60–100 pages of content — deepening the user's investment in Notion.
+- **Workers monetization** — JobRelay demonstrates the Workers compute model: AI-heavy workloads (scoring + generation) that justify per-run credit pricing. A power user running daily scans = steady compute revenue. This is the use case that proves Workers aren't just for developers — they create value for *every* Notion user.
 - **Platform stickiness** — Once your career history, tailored materials, and interview notes live in Notion, switching costs are high. This is the "second brain" use case applied to the highest-stakes personal workflow.
-- **Network effects** — Users share Career Command Center templates, creating organic growth in Notion's template marketplace.
+- **Template marketplace growth** — Career Command Center becomes a shareable template, driving organic acquisition. Every user who shares their job-tracking setup brings new users into the Notion ecosystem.
+
+> **The bottom line:** JobRelay isn't a standalone product — it's a proof of concept for how Notion Workers and Custom Agents can turn Notion from a productivity tool into an *action platform* where AI agents do real work on behalf of users. Career search is just the first vertical.
 
 ---
 
