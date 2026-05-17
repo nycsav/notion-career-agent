@@ -128,7 +128,7 @@ ntn workers env set ANTHROPIC_API_KEY
 ntn workers deploy
 ```
 
-Then open Notion AI chat and ask the **Career Intelligence Agent** to scan for jobs.
+Then open Notion AI chat and ask **JobRelay** to scan for jobs.
 
 ## Project Structure
 

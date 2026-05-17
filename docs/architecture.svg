@@ -1,5 +1,5 @@
 <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>Career Agent Architecture</title>
+  <title>JobRelay Architecture</title>
   <desc>Pipeline: Discover → Score → Decide → Tailor → Track → Notify</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
@@ -27,7 +27,7 @@
   </defs>
 
   <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" class="title">Career Agent — Pipeline Architecture</text>
+  <text x="450" y="30" text-anchor="middle" class="title">JobRelay — Pipeline Architecture</text>
   <text x="450" y="48" text-anchor="middle" class="subtitle">Sequential orchestration: each step depends on previous output</text>
 
   <!-- Pipeline boxes -->
