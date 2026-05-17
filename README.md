@@ -19,6 +19,24 @@
 
 ---
 
+> **🏆 Built for the [Notion Developer Platform Hackathon](https://lu.ma/fyuf7) (May 16–17, 2026) — Theme 2: Workflow Relay**
+
+<!-- 🎥 **[Watch the 60-Second Demo →](#)** -->
+
+---
+
+## Table of Contents
+
+- [The Problem](#the-problem)
+- [What JobRelay Does](#what-jobrelay-does)
+- [Architecture](#architecture)
+- [Career Command Center](#career-command-center)
+- [Why This Architecture](#why-this-architecture)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+
+---
+
 ## The Problem
 
 Job seekers submit **16 applications per week** but spend less than 30 minutes customizing each. Tailored resumes are **61% more likely** to land interviews, yet nobody customizes at scale. Existing tools are either spam cannons (LazyApply: 2.1 stars) or passive trackers that don't do the work for you.
@@ -116,7 +134,29 @@ A prioritization framework that weights applications by discovery channel:
 | 4 | Job board (LinkedIn, Indeed) | ~5% |
 | 5 | Cold apply | ~2% |
 
+## Why This Architecture
+
+Design decisions and tradeoffs that shaped JobRelay:
+
+| Decision | Rationale |
+|----------|-----------|
+| **Sequential pipeline** (not parallel) | Each step's output feeds the next — you can't tailor a resume without scoring first |
+| **Dual-model strategy** | Haiku is 10x cheaper for scoring bulk jobs; Sonnet produces higher-quality generation |
+| **Notion-native** | Zero external infrastructure — no databases, no servers, no Docker. Everything lives in your Notion workspace |
+| **Human-in-the-loop** | The agent never submits without approval. Trust is earned one application at a time |
+| **Source tier weighting** | A referral (50% interview rate) shouldn't be scored the same as a cold apply (2%) |
+| **Configurable autonomy** | Not everyone wants full autopilot. Copilot mode lets cautious users stay in control |
+
 ## Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- [Notion CLI](https://ntn.dev) (`ntn`)
+- [Anthropic API key](https://console.anthropic.com)
+- Notion workspace with Custom Agents enabled
+
+### Install & Deploy
 
 ```bash
 # Install Notion CLI
@@ -162,13 +202,8 @@ notion-career-agent/
 - **Production-grade scoring** — source tiers, match explanations, gap analysis, ATS keyword extraction
 - **Configurable cadence** — on-demand, daily, weekly, or realtime scanning
 
-## Built For
+---
 
-**Notion Developer Platform Hackathon** (May 16-17, 2026)
-Theme 2: Workflow Relay
-
-## Built By
-
-[Enso Labs](https://ensolabs.ai) — AI transformation studio, NYC
-
-Built with [Claude](https://anthropic.com) · Deployed on [Notion Developer Platform](https://developers.notion.com)
+<p align="center">
+  Built by <a href="https://ensolabs.ai">Enso Labs</a> · Powered by <a href="https://anthropic.com">Claude</a> · Deployed on <a href="https://developers.notion.com">Notion Developer Platform</a>
+</p>
