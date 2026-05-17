@@ -29,6 +29,7 @@
 
 - [The Problem](#the-problem)
 - [What JobRelay Does](#what-jobrelay-does)
+- [How to Use JobRelay](#how-to-use-jobrelay)
 - [Architecture](#architecture)
 - [Career Command Center](#career-command-center)
 - [Why This Architecture](#why-this-architecture)
@@ -78,6 +79,34 @@ JobRelay is a **Notion-native career agent** that automates the entire job appli
 | 4. Tailor | Generate ATS-optimized resume + cover letter | Claude Sonnet 4.5 (quality) |
 | 5. Track | Update Career Command Center database | Notion Database API |
 | 6. Notify | Ping Slack for human approval | Slack MCP |
+
+## How to Use JobRelay
+
+JobRelay is designed to feel like chatting with a helpful colleague — no code, no jargon, no setup wizards. Just open Notion AI and start talking.
+
+<p align="center">
+  <img src="docs/user-flow.svg" alt="Three-step user flow: Say Hello → Set Preferences → Scan and Track" width="900"/>
+</p>
+
+### Step 1: Say Hello
+
+Open Notion AI chat, select **JobRelay**, and ask what it can do. The agent introduces itself in plain English and offers to set up your profile.
+
+### Step 2: Set Your Preferences
+
+The agent asks simple questions — no forms, no settings pages:
+- *"What roles are you targeting?"*
+- *"What locations work for you?"*
+- *"What's your minimum salary?"*
+- *"How hands-on do you want to be?"* (Copilot / Autopilot / Autonomous)
+
+### Step 3: Scan and Track
+
+Say **"scan for jobs"** and watch results flow into your Career Command Center. Each role gets a match score (0-100), fit explanation, and — for strong matches — a tailored resume generated automatically.
+
+> **Design principle:** Following [Notion's best practices for Custom Agents](https://www.notion.com/help/best-practices-for-creating-and-optimizing-a-custom-agent) — start simple, build gradually, keep instructions clear, and never overwhelm the user with complexity.
+
+---
 
 ## Architecture
 
