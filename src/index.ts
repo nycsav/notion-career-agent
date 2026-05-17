@@ -163,7 +163,7 @@ async function generateTailoredMaterials(
   matchExplanation: string
 ): Promise<TailoredMaterials> {
   const text = await callClaude(
-    "claude-sonnet-4-5-20241022",
+    "claude-sonnet-4-5",
     `You are an expert resume strategist. Given a base resume, target job, and match analysis, produce:
 
 1. A tailored resume in markdown format that:

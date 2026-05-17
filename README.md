@@ -75,7 +75,7 @@ JobRelay is a **Notion-native career agent** that automates the entire job appli
 | 1. Discover | Scan Dice + Indeed for matching roles | `scanJobs` + MCP connectors |
 | 2. Score | Rate each role 0-100 against your profile | Claude Haiku 4.5 (fast) |
 | 3. Decide | Route based on automation tier + threshold | `configureAgent` settings |
-| 4. Tailor | Generate ATS-optimized resume + cover letter | Claude Sonnet 4.6 (quality) |
+| 4. Tailor | Generate ATS-optimized resume + cover letter | Claude Sonnet 4.5 (quality) |
 | 5. Track | Update Career Command Center database | Notion Database API |
 | 6. Notify | Ping Slack for human approval | Slack MCP |
 
@@ -96,7 +96,7 @@ JobRelay is a **Notion-native career agent** that automates the entire job appli
 | Model | Role | Why |
 |-------|------|-----|
 | **Claude Haiku 4.5** | Scoring (Step 2) | Fast, cheap — scores dozens of jobs in seconds |
-| **Claude Sonnet 4.6** | Generation (Step 4) | Quality resume + cover letter writing |
+| **Claude Sonnet 4.5** | Generation (Step 4) | Quality resume + cover letter writing |
 
 ### Three Automation Tiers
 
