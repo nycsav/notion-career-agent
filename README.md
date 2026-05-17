@@ -139,7 +139,6 @@ notion-career-agent/
 ├── docs/
 │   └── architecture.svg  # Pipeline architecture diagram
 ├── AGENT_PROMPT.md        # Custom Agent orchestration prompt
-├── DEMO_SCRIPT.md         # 60-second demo video script
 ├── package.json
 ├── tsconfig.json
 └── LICENSE                # MIT
