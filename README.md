@@ -27,9 +27,9 @@ Job seekers submit **16 applications per week** but spend less than 30 minutes c
 
 JobRelay is a **Notion-native career agent** that automates the entire job application pipeline using Notion Workers and Claude AI:
 
-```
-Job Boards → DISCOVER → SCORE → DECIDE → TAILOR → TRACK → NOTIFY → Human Approves
-```
+<p align="center">
+  <img src="docs/demo-flow.svg" alt="User Experience Flow" width="900"/>
+</p>
 
 **Six-step sequential pipeline** — each step depends on the output of the previous one:
 
@@ -46,6 +46,12 @@ Job Boards → DISCOVER → SCORE → DECIDE → TAILOR → TRACK → NOTIFY →
 
 <p align="center">
   <img src="docs/architecture.svg" alt="Pipeline Architecture" width="800"/>
+</p>
+
+### Agent in Action
+
+<p align="center">
+  <img src="docs/agent-chat.svg" alt="JobRelay Agent Chat" width="520"/>
 </p>
 
 ### Dual-Model AI Strategy
@@ -80,7 +86,7 @@ Users control how much the agent does autonomously:
 The Notion database that tracks your entire pipeline:
 
 <p align="center">
-  <em>Career Command Center — database view with AI-scored entries, automation tiers, and ATS keywords</em>
+  <img src="docs/command-center.svg" alt="Career Command Center" width="900"/>
 </p>
 
 | Property | Type | Purpose |
@@ -137,7 +143,10 @@ notion-career-agent/
 ├── src/
 │   └── index.ts          # Worker with 5 tools (~590 lines)
 ├── docs/
-│   └── architecture.svg  # Pipeline architecture diagram
+│   ├── architecture.svg  # Pipeline architecture diagram
+│   ├── demo-flow.svg     # End-to-end user flow
+│   ├── command-center.svg # Career Command Center mockup
+│   └── agent-chat.svg    # Agent chat interaction
 ├── AGENT_PROMPT.md        # Custom Agent orchestration prompt
 ├── package.json
 ├── tsconfig.json

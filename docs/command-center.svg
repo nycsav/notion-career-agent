@@ -1,0 +1,150 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Career Command Center — Notion Database View</title>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .window-title { font-size: 12px; fill: #1a1a2e; font-weight: 500; }
+    .db-title { font-size: 16px; fill: #1a1a2e; font-weight: 700; }
+    .col-header { font-size: 10px; fill: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .cell-text { font-size: 11px; fill: #1f2937; }
+    .cell-muted { font-size: 10px; fill: #6b7280; }
+    .score-high { fill: #059669; font-weight: 700; font-size: 12px; }
+    .score-med { fill: #d97706; font-weight: 700; font-size: 12px; }
+    .score-low { fill: #dc2626; font-weight: 700; font-size: 12px; }
+    .tag { font-size: 9px; font-weight: 600; }
+  </style>
+
+  <!-- Window chrome -->
+  <rect x="0" y="0" width="900" height="480" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <rect x="0" y="0" width="900" height="36" rx="12" fill="#f9fafb"/>
+  <rect x="0" y="24" width="900" height="12" fill="#f9fafb"/>
+  <circle cx="20" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="18" r="6" fill="#28c840"/>
+  <text x="450" y="22" text-anchor="middle" class="window-title">Notion — Career Command Center</text>
+
+  <!-- Sidebar hint -->
+  <rect x="0" y="36" width="44" height="444" fill="#f3f4f6"/>
+  <rect x="0" y="468" width="44" height="12" rx="0" fill="#f3f4f6"/>
+
+  <!-- Page header -->
+  <text x="70" y="72" class="db-title">🎯 Career Command Center</text>
+  <text x="70" y="90" style="font-size:11px;fill:#6b7280">Powered by JobRelay — AI-scored pipeline with automated resume tailoring</text>
+
+  <!-- View tabs -->
+  <rect x="70" y="102" width="65" height="24" rx="4" fill="#ede9fe"/>
+  <text x="102" y="118" text-anchor="middle" style="font-size:10px;fill:#7c3aed;font-weight:600">All Jobs</text>
+  <rect x="142" y="102" width="65" height="24" rx="4" fill="transparent"/>
+  <text x="174" y="118" text-anchor="middle" style="font-size:10px;fill:#6b7280">Scoring</text>
+  <rect x="214" y="102" width="65" height="24" rx="4" fill="transparent"/>
+  <text x="246" y="118" text-anchor="middle" style="font-size:10px;fill:#6b7280">Applied</text>
+  <rect x="286" y="102" width="80" height="24" rx="4" fill="transparent"/>
+  <text x="326" y="118" text-anchor="middle" style="font-size:10px;fill:#6b7280">Interviews</text>
+
+  <!-- Table header -->
+  <line x1="70" y1="138" x2="880" y2="138" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="154" class="col-header">Job Title</text>
+  <text x="240" y="154" class="col-header">Company</text>
+  <text x="350" y="154" class="col-header">Fit Score</text>
+  <text x="430" y="154" class="col-header">Priority</text>
+  <text x="520" y="154" class="col-header">Status</text>
+  <text x="625" y="154" class="col-header">Automation</text>
+  <text x="730" y="154" class="col-header">Source</text>
+  <text x="820" y="154" class="col-header">Applied</text>
+  <line x1="70" y1="162" x2="880" y2="162" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Row 1 -->
+  <rect x="70" y="163" width="810" height="44" fill="#f0fdf4" opacity="0.5"/>
+  <text x="80" y="188" class="cell-text" font-weight="500">Sr. AI/ML Engineer</text>
+  <text x="240" y="188" class="cell-text">Anthropic</text>
+  <text x="365" y="188" class="score-high">94</text>
+  <rect x="430" y="176" width="56" height="20" rx="10" fill="#dbeafe"/>
+  <text x="458" y="190" text-anchor="middle" class="tag" fill="#1d4ed8">DREAM</text>
+  <rect x="520" y="176" width="55" height="20" rx="10" fill="#d1fae5"/>
+  <text x="547" y="190" text-anchor="middle" class="tag" fill="#065f46">Ready</text>
+  <rect x="625" y="176" width="72" height="20" rx="10" fill="#fef3c7"/>
+  <text x="661" y="190" text-anchor="middle" class="tag" fill="#92400e">Autopilot</text>
+  <rect x="730" y="176" width="50" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="755" y="190" text-anchor="middle" class="tag" fill="#374151">Dice</text>
+  <text x="820" y="188" class="cell-muted">May 15</text>
+
+  <!-- Row 2 -->
+  <rect x="70" y="207" width="810" height="44" fill="transparent"/>
+  <text x="80" y="232" class="cell-text" font-weight="500">Staff Engineer, Platform</text>
+  <text x="240" y="232" class="cell-text">Stripe</text>
+  <text x="365" y="232" class="score-high">87</text>
+  <rect x="430" y="220" width="48" height="20" rx="10" fill="#dcfce7"/>
+  <text x="454" y="234" text-anchor="middle" class="tag" fill="#166534">HIGH</text>
+  <rect x="520" y="220" width="62" height="20" rx="10" fill="#fef3c7"/>
+  <text x="551" y="234" text-anchor="middle" class="tag" fill="#92400e">Tailoring</text>
+  <rect x="625" y="220" width="72" height="20" rx="10" fill="#fef3c7"/>
+  <text x="661" y="234" text-anchor="middle" class="tag" fill="#92400e">Autopilot</text>
+  <rect x="730" y="220" width="56" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="758" y="234" text-anchor="middle" class="tag" fill="#374151">Indeed</text>
+  <text x="820" y="232" class="cell-muted">—</text>
+
+  <!-- Row 3 -->
+  <rect x="70" y="251" width="810" height="44" fill="#f0fdf4" opacity="0.5"/>
+  <text x="80" y="276" class="cell-text" font-weight="500">Head of AI Strategy</text>
+  <text x="240" y="276" class="cell-text">McKinsey</text>
+  <text x="365" y="276" class="score-high">82</text>
+  <rect x="430" y="264" width="48" height="20" rx="10" fill="#dcfce7"/>
+  <text x="454" y="278" text-anchor="middle" class="tag" fill="#166534">HIGH</text>
+  <rect x="520" y="264" width="60" height="20" rx="10" fill="#e0e7ff"/>
+  <text x="550" y="278" text-anchor="middle" class="tag" fill="#3730a3">Scoring</text>
+  <rect x="625" y="264" width="55" height="20" rx="10" fill="#dbeafe"/>
+  <text x="652" y="278" text-anchor="middle" class="tag" fill="#1e40af">Copilot</text>
+  <rect x="730" y="264" width="62" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="761" y="278" text-anchor="middle" class="tag" fill="#374151">LinkedIn</text>
+  <text x="820" y="276" class="cell-muted">—</text>
+
+  <!-- Row 4 -->
+  <rect x="70" y="295" width="810" height="44" fill="transparent"/>
+  <text x="80" y="320" class="cell-text" font-weight="500">Principal ML Engineer</text>
+  <text x="240" y="320" class="cell-text">OpenAI</text>
+  <text x="365" y="320" class="score-med">71</text>
+  <rect x="430" y="308" width="62" height="20" rx="10" fill="#fef9c3"/>
+  <text x="461" y="322" text-anchor="middle" class="tag" fill="#854d0e">MEDIUM</text>
+  <rect x="520" y="308" width="42" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="541" y="322" text-anchor="middle" class="tag" fill="#374151">New</text>
+  <rect x="625" y="308" width="55" height="20" rx="10" fill="#dbeafe"/>
+  <text x="652" y="322" text-anchor="middle" class="tag" fill="#1e40af">Copilot</text>
+  <rect x="730" y="308" width="50" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="755" y="322" text-anchor="middle" class="tag" fill="#374151">Dice</text>
+  <text x="820" y="320" class="cell-muted">—</text>
+
+  <!-- Row 5 -->
+  <rect x="70" y="339" width="810" height="44" fill="#f0fdf4" opacity="0.5"/>
+  <text x="80" y="364" class="cell-text" font-weight="500">VP Engineering</text>
+  <text x="240" y="364" class="cell-text">Scale AI</text>
+  <text x="365" y="364" class="score-med">65</text>
+  <rect x="430" y="352" width="62" height="20" rx="10" fill="#fef9c3"/>
+  <text x="461" y="366" text-anchor="middle" class="tag" fill="#854d0e">MEDIUM</text>
+  <rect x="520" y="352" width="55" height="20" rx="10" fill="#d1fae5"/>
+  <text x="547" y="366" text-anchor="middle" class="tag" fill="#065f46">Ready</text>
+  <rect x="625" y="352" width="82" height="20" rx="10" fill="#d1fae5"/>
+  <text x="666" y="366" text-anchor="middle" class="tag" fill="#065f46">Autonomous</text>
+  <rect x="730" y="352" width="56" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="758" y="366" text-anchor="middle" class="tag" fill="#374151">Indeed</text>
+  <text x="820" y="364" class="cell-muted">May 14</text>
+
+  <!-- Row 6 -->
+  <rect x="70" y="383" width="810" height="44" fill="transparent"/>
+  <text x="80" y="408" class="cell-text" font-weight="500">Data Platform Lead</text>
+  <text x="240" y="408" class="cell-text">Databricks</text>
+  <text x="365" y="408" class="score-low">42</text>
+  <rect x="430" y="396" width="42" height="20" rx="10" fill="#fee2e2"/>
+  <text x="451" y="410" text-anchor="middle" class="tag" fill="#991b1b">LOW</text>
+  <rect x="520" y="396" width="58" height="20" rx="10" fill="#fecaca"/>
+  <text x="549" y="410" text-anchor="middle" class="tag" fill="#991b1b">Skipped</text>
+  <rect x="625" y="396" width="55" height="20" rx="10" fill="#dbeafe"/>
+  <text x="652" y="410" text-anchor="middle" class="tag" fill="#1e40af">Copilot</text>
+  <rect x="730" y="396" width="56" height="20" rx="10" fill="#f3f4f6"/>
+  <text x="758" y="410" text-anchor="middle" class="tag" fill="#374151">Indeed</text>
+  <text x="820" y="408" class="cell-muted">—</text>
+
+  <!-- Bottom bar -->
+  <line x1="70" y1="435" x2="880" y2="435" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="455" style="font-size:10px;fill:#9ca3af">6 jobs tracked · 2 ready to apply · Last scan: 3 min ago</text>
+  <rect x="760" y="442" width="110" height="26" rx="6" fill="#1e293b"/>
+  <text x="815" y="459" text-anchor="middle" style="font-size:10px;fill:#fff;font-weight:600">+ Scan for Jobs</text>
+</svg>
