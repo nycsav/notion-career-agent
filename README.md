@@ -107,6 +107,16 @@ Say **"scan for jobs"** and watch results flow into your Career Command Center. 
 
 > **Design principle:** Following [Notion's best practices for Custom Agents](https://www.notion.com/help/best-practices-for-creating-and-optimizing-a-custom-agent) — start simple, build gradually, keep instructions clear, and never overwhelm the user with complexity.
 
+### What Makes the UX Different
+
+Unlike passive trackers (Teal, Huntr) or spam cannons (LazyApply), JobRelay's conversational design follows 2026 NLP best practices:
+
+- **Lead with value, not features** — First message is a status update ("3 new matches since yesterday"), not a feature list
+- **One question at a time** — Progressive disclosure during onboarding, never a form dump
+- **Constraint-driven** — Users set exclusions and dealbreakers to reduce noise, increasing trust
+- **Proactive re-engagement** — "5 new roles posted since Tuesday" brings users back without guilt
+- **Close with action** — Every response ends with a clear next step ("Want me to generate a resume for this one?")
+
 ---
 
 ## Architecture
