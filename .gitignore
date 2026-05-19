@@ -6,3 +6,11 @@ dist
 .DS_Store
 SUBMISSION_PLAN.md
 DEMO_VIDEO_PLAN.md
+DEMO_SCRIPTS.md
+DEMO_SCRIPT_3MIN.md
+Demo_Script_3min.pdf
+workers.json
+JobRelay_Demo.mp4
+*.mov
+frame_*.jpg
+fine_*.jpg
