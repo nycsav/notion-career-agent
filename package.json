@@ -1,18 +1,48 @@
 {
   "name": "notion-career-agent",
-  "version": "1.0.0",
-  "description": "AI career agent for Notion — scans jobs, tailors resumes, tracks applications",
+  "version": "2.0.0",
+  "description": "AI-powered career agent for Notion — scans job boards, scores matches with Claude, generates tailored resumes, and tracks your application pipeline inside Notion.",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmit",
+    "check": "tsc --noEmit",
     "deploy": "ntn workers deploy",
-    "dev": "ntn workers dev"
+    "dev": "ntn workers dev",
+    "exec": "ntn workers exec"
+  },
+  "keywords": [
+    "notion",
+    "notion-workers",
+    "notion-api",
+    "notion-adk",
+    "ai-agent",
+    "claude",
+    "anthropic",
+    "career",
+    "job-search",
+    "resume",
+    "ats",
+    "hackathon"
+  ],
+  "author": "Sav Banerjee <sav@ensopartners.co> (https://ensolabs.ai)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nycsav/notion-career-agent"
+  },
+  "homepage": "https://github.com/nycsav/notion-career-agent#readme",
+  "bugs": {
+    "url": "https://github.com/nycsav/notion-career-agent/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
-    "@notionhq/workers": "latest"
+    "@notionhq/workers": "^0.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.4.0"
+    "typescript": "^5.5.0"
   }
 }

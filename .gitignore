@@ -1,16 +1,37 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment files
 .env
 .env.local
+
+# TypeScript
 *.tsbuildinfo
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Notion Workers deployment state (contains workspace-specific IDs)
+workers.json
+
+# Hackathon artifacts (not part of the project)
 SUBMISSION_PLAN.md
 DEMO_VIDEO_PLAN.md
 DEMO_SCRIPTS.md
 DEMO_SCRIPT_3MIN.md
 Demo_Script_3min.pdf
-workers.json
 JobRelay_Demo.mp4
 *.mov
 frame_*.jpg
 fine_*.jpg
+
+# Misplaced files (email signatures, OG images)
+enso-labs-email-signature.html
+enso-labs-signature-white.png
+enso-labs-signature.png
+enso-signature-gmail.html
+og-*.png
